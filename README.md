@@ -6,6 +6,7 @@ Working with the STM32L4A6ZG microcontroller via the Nucleo-L4A6ZG.
 
 * Main guide: https://www.makerspace-online.com/make-your-microcontroller-apps-safe-and-secure-with-rust-2/
 * User Manual: https://www.st.com/resource/en/user_manual/um2179-stm32-nucleo144-boards-mb1312-stmicroelectronics.pdf
+* Maybe good: https://www.anyleaf.org/blog/writing-embedded-firmware-using-rust
 
 ## Alternative Ideas
 
@@ -22,3 +23,9 @@ Working with the STM32L4A6ZG microcontroller via the Nucleo-L4A6ZG.
 ### Not Used
 * PG7 = LPUART1 TX (via ST-LINK)
 * PG8 = LPUART1 RX (via ST-LINK)
+
+## Hints for Next Steps
+
+1. Create two separate crates in a repo, and put as much testable logic as possible in the other platform-independent crate.
+    * E.g., command parsing, the command list, etc. goes in that crate.
+2. Consider adding defmt logging: https://github.com/knurling-rs/defmt
