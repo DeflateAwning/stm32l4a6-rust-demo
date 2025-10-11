@@ -2,14 +2,12 @@
 
 #![no_std]
 #![no_main]
+
 extern crate cortex_m;
-
 use core::sync::atomic::{AtomicBool, AtomicU8, Ordering};
-
+use rtt_target::{rprintln, rtt_init_print};
 use stm32l4xx_hal::prelude::*;
 use stm32l4xx_hal::{self as stm32_hal, interrupt};
-
-use rtt_target::{rprintln, rtt_init_print};
 
 // Single-byte "mailbox" used by the IRQ to buffer one pending TX byte when TXE isn't ready.
 static PENDING_VALID: AtomicBool = AtomicBool::new(false);
@@ -144,7 +142,7 @@ unsafe fn HardFault(ef: &cortex_m_rt::ExceptionFrame) -> ! {
 
 fn send_uart2(data: &[u8]) {
     let usart2 = unsafe { &*stm32_hal::stm32::USART2::ptr() };
-    
+
     for &b in data {
         // Wait until TXE is set (TDR empty).
         while usart2.isr.read().txe().bit_is_clear() {}
