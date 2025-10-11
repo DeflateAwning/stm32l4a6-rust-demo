@@ -16,8 +16,8 @@ Working with the STM32L4A6ZG microcontroller via the Nucleo-L4A6ZG.
 * LD1 = PC7 (Green LED)
 * LD2 = PB7 (Blue LED)
 * LD3 = PB14 (Red LED)
-* USART2 TX = PA2
-* USART2 RX = PA3
+* USART2 TX = PA2 or PD5
+* USART2 RX = PA3 or PD6
 
 ### Not Used
 * PG7 = LPUART1 TX (via ST-LINK)
