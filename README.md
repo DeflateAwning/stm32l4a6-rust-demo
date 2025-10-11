@@ -1,6 +1,22 @@
-# Try STM32L4 with Rust
+# STM32L4A6 Rust Demo
 
 Working with the STM32L4A6ZG microcontroller via the Nucleo-L4A6ZG.
+
+## Getting Started
+
+1. Install the required dependencies.
+
+```bash
+rustup update
+rustup target add thumbv7em-none-eabihf
+rustup component add llvm-tools
+cargo install cargo-binutils probe-rs-tools cargo-expand
+```
+
+2. Open this repo in VS Code.
+3. Run `cargo embed` from the root of this repo, with the Nucleo-L4A6ZG plugged in.
+4. Observe logs coming from the STM32. Observe the green onboard LED blinking.
+
 
 ## Guides/Notes
 
