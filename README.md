@@ -4,7 +4,8 @@ Working with the STM32L4A6ZG microcontroller via the Nucleo-L4A6ZG.
 
 ## Getting Started
 
-1. Install the required dependencies.
+1. [Install Rust](https://rust-lang.org/tools/install/). It must be installed using `rustup`.
+2. Install the required dependencies for embedded rust development.
 
 ```bash
 rustup update
@@ -13,9 +14,9 @@ rustup component add llvm-tools
 cargo install cargo-binutils probe-rs-tools cargo-expand
 ```
 
-2. Open this repo in VS Code.
-3. Run `cargo embed` from the root of this repo, with the Nucleo-L4A6ZG plugged in.
-4. Observe logs coming from the STM32. Observe the green onboard LED blinking.
+3. Open this repo in VS Code.
+4. To flash and run the firmware, run `cargo embed` from the root of this repo, with the Nucleo-L4A6ZG plugged in.
+5. Observe logs coming from the STM32. Observe the green onboard LED blinking.
 
 
 ## Guides/Notes
